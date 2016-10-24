@@ -1,153 +1,549 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generated="20161023 21:26:15.709" generator="Robot 3.0 (Python 2.7.9 on win32)">
-<suite source="C:\Users\Mio\PycharmProjects\Robot\test.robot" id="s1" name="Test">
+<robot generated="20161024 17:06:10.678" generator="Robot 3.0 (Python 2.7.9 on win32)">
+<suite source="C:\Users\Mio\PycharmProjects\Robot\GitHub_Login_Test_Cases.robot" id="s1" name="GitHub Login Test Cases">
 <test id="s1-t1" name="User is able to login with a valid username and password">
+<kw name="Open Browser And Go To GitHub" library="UserKeywords">
 <kw name="Open Browser" library="Selenium2Library">
 <doc>Opens a new browser instance to given URL.</doc>
 <arguments>
 <arg>${URL}</arg>
 <arg>${Browser}</arg>
 </arguments>
-<msg timestamp="20161023 21:26:15.799" level="INFO">Opening browser 'chrome' to base url 'https://github.com/'</msg>
-<status status="PASS" endtime="20161023 21:26:20.235" starttime="20161023 21:26:15.789"></status>
+<msg timestamp="20161024 17:06:10.780" level="INFO">Opening browser 'chrome' to base url 'https://github.com/'</msg>
+<status status="PASS" endtime="20161024 17:06:15.061" starttime="20161024 17:06:10.780"></status>
+</kw>
+<status status="PASS" endtime="20161024 17:06:15.061" starttime="20161024 17:06:10.779"></status>
 </kw>
 <kw name="Maximize Browser Window" library="Selenium2Library">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" endtime="20161023 21:26:21.392" starttime="20161023 21:26:20.235"></status>
+<status status="PASS" endtime="20161024 17:06:16.196" starttime="20161024 17:06:15.061"></status>
 </kw>
+<kw name="Click Sign In Button" library="UserKeywords">
 <kw name="Click Element" library="Selenium2Library">
 <doc>Click element identified by `locator`.</doc>
 <arguments>
 <arg>link=${SignIn}</arg>
 </arguments>
-<msg timestamp="20161023 21:26:21.393" level="INFO">Clicking element 'link=Sign in'.</msg>
-<status status="PASS" endtime="20161023 21:26:21.709" starttime="20161023 21:26:21.392"></status>
+<msg timestamp="20161024 17:06:16.197" level="INFO">Clicking element 'link=Sign in'.</msg>
+<status status="PASS" endtime="20161024 17:06:16.577" starttime="20161024 17:06:16.197"></status>
 </kw>
+<status status="PASS" endtime="20161024 17:06:16.577" starttime="20161024 17:06:16.196"></status>
+</kw>
+<kw name="Enter Valid Username" library="UserKeywords">
 <kw name="Press Key" library="Selenium2Library">
 <doc>Simulates user pressing key on element identified by `locator`.</doc>
 <arguments>
 <arg>${LoginField}</arg>
 <arg>${Usernames[0]}</arg>
 </arguments>
-<status status="PASS" endtime="20161023 21:26:21.761" starttime="20161023 21:26:21.709"></status>
+<status status="PASS" endtime="20161024 17:06:16.631" starttime="20161024 17:06:16.577"></status>
 </kw>
+<status status="PASS" endtime="20161024 17:06:16.631" starttime="20161024 17:06:16.577"></status>
+</kw>
+<kw name="Enter Valid Password" library="UserKeywords">
 <kw name="Press Key" library="Selenium2Library">
 <doc>Simulates user pressing key on element identified by `locator`.</doc>
 <arguments>
 <arg>${PasswordField}</arg>
 <arg>${Passwords[0]}</arg>
 </arguments>
-<status status="PASS" endtime="20161023 21:26:21.805" starttime="20161023 21:26:21.761"></status>
+<status status="PASS" endtime="20161024 17:06:16.678" starttime="20161024 17:06:16.632"></status>
 </kw>
+<status status="PASS" endtime="20161024 17:06:16.678" starttime="20161024 17:06:16.631"></status>
+</kw>
+<kw name="Click Login Button" library="UserKeywords">
 <kw name="Click Element" library="Selenium2Library">
 <doc>Click element identified by `locator`.</doc>
 <arguments>
 <arg>${Login}</arg>
 </arguments>
-<msg timestamp="20161023 21:26:21.806" level="INFO">Clicking element 'commit'.</msg>
-<status status="PASS" endtime="20161023 21:26:22.212" starttime="20161023 21:26:21.805"></status>
+<msg timestamp="20161024 17:06:16.679" level="INFO">Clicking element 'commit'.</msg>
+<status status="PASS" endtime="20161024 17:06:17.122" starttime="20161024 17:06:16.679"></status>
 </kw>
+<status status="PASS" endtime="20161024 17:06:17.122" starttime="20161024 17:06:16.678"></status>
+</kw>
+<kw name="Wait For Successful Login Element To Appear" library="UserKeywords">
 <kw name="Wait Until Page Contains Element" library="Selenium2Library">
 <doc>Waits until element specified with `locator` appears on current page.</doc>
 <arguments>
 <arg>name=${LoginCheck}</arg>
 </arguments>
-<status status="PASS" endtime="20161023 21:26:22.223" starttime="20161023 21:26:22.213"></status>
+<status status="PASS" endtime="20161024 17:06:17.134" starttime="20161024 17:06:17.122"></status>
 </kw>
-<status status="PASS" endtime="20161023 21:26:22.223" critical="yes" starttime="20161023 21:26:15.789"></status>
+<status status="PASS" endtime="20161024 17:06:17.134" starttime="20161024 17:06:17.122"></status>
+</kw>
+<timeout value="10 seconds"></timeout>
+<status status="PASS" endtime="20161024 17:06:17.134" critical="yes" starttime="20161024 17:06:10.778"></status>
 </test>
 <test id="s1-t2" name="User is able to log out">
+<kw name="Click Logout Button 1" library="UserKeywords">
 <kw name="Click Element" library="Selenium2Library">
 <doc>Click element identified by `locator`.</doc>
 <arguments>
 <arg>css=${Logout1}</arg>
 </arguments>
-<msg timestamp="20161023 21:26:22.224" level="INFO">Clicking element 'css=img.avatar'.</msg>
-<status status="PASS" endtime="20161023 21:26:22.261" starttime="20161023 21:26:22.224"></status>
+<msg timestamp="20161024 17:06:17.136" level="INFO">Clicking element 'css=img.avatar'.</msg>
+<status status="PASS" endtime="20161024 17:06:17.171" starttime="20161024 17:06:17.136"></status>
 </kw>
+<status status="PASS" endtime="20161024 17:06:17.172" starttime="20161024 17:06:17.135"></status>
+</kw>
+<kw name="Click Logout Button 2" library="UserKeywords">
 <kw name="Click Element" library="Selenium2Library">
 <doc>Click element identified by `locator`.</doc>
 <arguments>
 <arg>css=${Logout2}</arg>
 </arguments>
-<msg timestamp="20161023 21:26:22.261" level="INFO">Clicking element 'css=button.dropdown-item.dropdown-signout'.</msg>
-<status status="PASS" endtime="20161023 21:26:22.596" starttime="20161023 21:26:22.261"></status>
+<msg timestamp="20161024 17:06:17.172" level="INFO">Clicking element 'css=button.dropdown-item.dropdown-signout'.</msg>
+<status status="PASS" endtime="20161024 17:06:17.486" starttime="20161024 17:06:17.172"></status>
 </kw>
+<status status="PASS" endtime="20161024 17:06:17.486" starttime="20161024 17:06:17.172"></status>
+</kw>
+<kw name="Wait For Successful Login Element To Appear" library="UserKeywords">
 <kw name="Wait Until Page Contains Element" library="Selenium2Library">
 <doc>Waits until element specified with `locator` appears on current page.</doc>
 <arguments>
-<arg>link=${SignIn}</arg>
+<arg>name=${LoginCheck}</arg>
 </arguments>
-<status status="PASS" endtime="20161023 21:26:22.618" starttime="20161023 21:26:22.596"></status>
+<status status="PASS" endtime="20161024 17:06:17.492" starttime="20161024 17:06:17.486"></status>
 </kw>
-<status status="PASS" endtime="20161023 21:26:22.618" critical="yes" starttime="20161023 21:26:22.224"></status>
+<status status="PASS" endtime="20161024 17:06:17.492" starttime="20161024 17:06:17.486"></status>
+</kw>
+<timeout value="10 seconds"></timeout>
+<status status="PASS" endtime="20161024 17:06:17.492" critical="yes" starttime="20161024 17:06:17.135"></status>
 </test>
 <test id="s1-t3" name="User is unable to login with an invalid username and invalid password">
+<kw name="Go to GitHub" library="UserKeywords">
 <kw name="Go To" library="Selenium2Library">
 <doc>Navigates the active browser instance to the provided URL.</doc>
 <arguments>
 <arg>${URL}</arg>
 </arguments>
-<msg timestamp="20161023 21:26:22.619" level="INFO">Opening url 'https://github.com/'</msg>
-<status status="PASS" endtime="20161023 21:26:22.861" starttime="20161023 21:26:22.619"></status>
+<msg timestamp="20161024 17:06:17.493" level="INFO">Opening url 'https://github.com/'</msg>
+<status status="PASS" endtime="20161024 17:06:17.718" starttime="20161024 17:06:17.493"></status>
 </kw>
+<status status="PASS" endtime="20161024 17:06:17.718" starttime="20161024 17:06:17.493"></status>
+</kw>
+<kw name="Click Sign In Button" library="UserKeywords">
 <kw name="Click Element" library="Selenium2Library">
 <doc>Click element identified by `locator`.</doc>
 <arguments>
 <arg>link=${SignIn}</arg>
 </arguments>
-<msg timestamp="20161023 21:26:22.862" level="INFO">Clicking element 'link=Sign in'.</msg>
-<status status="PASS" endtime="20161023 21:26:22.903" starttime="20161023 21:26:22.862"></status>
+<msg timestamp="20161024 17:06:17.719" level="INFO">Clicking element 'link=Sign in'.</msg>
+<status status="PASS" endtime="20161024 17:06:17.975" starttime="20161024 17:06:17.718"></status>
 </kw>
+<status status="PASS" endtime="20161024 17:06:17.975" starttime="20161024 17:06:17.718"></status>
+</kw>
+<kw name="Enter Invalid Username" library="UserKeywords">
 <kw name="Press Key" library="Selenium2Library">
 <doc>Simulates user pressing key on element identified by `locator`.</doc>
 <arguments>
 <arg>${LoginField}</arg>
 <arg>${Usernames[1]}</arg>
 </arguments>
-<status status="PASS" endtime="20161023 21:26:23.149" starttime="20161023 21:26:22.904"></status>
+<status status="PASS" endtime="20161024 17:06:18.022" starttime="20161024 17:06:17.976"></status>
 </kw>
+<status status="PASS" endtime="20161024 17:06:18.022" starttime="20161024 17:06:17.975"></status>
+</kw>
+<kw name="Enter Invalid Password" library="UserKeywords">
 <kw name="Press Key" library="Selenium2Library">
 <doc>Simulates user pressing key on element identified by `locator`.</doc>
 <arguments>
 <arg>${PasswordField}</arg>
 <arg>${Passwords[1]}</arg>
 </arguments>
-<status status="PASS" endtime="20161023 21:26:23.188" starttime="20161023 21:26:23.149"></status>
+<status status="PASS" endtime="20161024 17:06:18.067" starttime="20161024 17:06:18.022"></status>
 </kw>
+<status status="PASS" endtime="20161024 17:06:18.068" starttime="20161024 17:06:18.022"></status>
+</kw>
+<kw name="Click Login Button" library="UserKeywords">
 <kw name="Click Element" library="Selenium2Library">
 <doc>Click element identified by `locator`.</doc>
 <arguments>
 <arg>${Login}</arg>
 </arguments>
-<msg timestamp="20161023 21:26:23.189" level="INFO">Clicking element 'commit'.</msg>
-<status status="PASS" endtime="20161023 21:26:23.447" starttime="20161023 21:26:23.188"></status>
+<msg timestamp="20161024 17:06:18.069" level="INFO">Clicking element 'commit'.</msg>
+<status status="PASS" endtime="20161024 17:06:18.331" starttime="20161024 17:06:18.068"></status>
 </kw>
-<kw name="Page Should Contain" library="Selenium2Library">
-<doc>Verifies that current page contains `text`.</doc>
+<status status="PASS" endtime="20161024 17:06:18.332" starttime="20161024 17:06:18.068"></status>
+</kw>
+<kw name="Wait For Unsucessful Login Element To Appear" library="UserKeywords">
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
 <arguments>
-<arg>New to GitHub?</arg>
+<arg>Incorrect username or password</arg>
 </arguments>
-<msg timestamp="20161023 21:26:23.460" level="INFO">Current page contains text 'New to GitHub?'.</msg>
-<status status="PASS" endtime="20161023 21:26:23.460" starttime="20161023 21:26:23.447"></status>
+<status status="PASS" endtime="20161024 17:06:18.355" starttime="20161024 17:06:18.332"></status>
 </kw>
-<kw name="Close Browser" library="Selenium2Library">
-<doc>Closes the current browser.</doc>
-<status status="PASS" endtime="20161023 21:26:26.491" starttime="20161023 21:26:23.460"></status>
+<status status="PASS" endtime="20161024 17:06:18.355" starttime="20161024 17:06:18.332"></status>
 </kw>
-<status status="PASS" endtime="20161023 21:26:26.492" critical="yes" starttime="20161023 21:26:22.619"></status>
+<timeout value="10 seconds"></timeout>
+<status status="PASS" endtime="20161024 17:06:18.355" critical="yes" starttime="20161024 17:06:17.492"></status>
 </test>
-<status status="PASS" endtime="20161023 21:26:26.493" starttime="20161023 21:26:15.709"></status>
+<test id="s1-t4" name="User is unable to login with valid username and invalid password">
+<kw name="Go to GitHub" library="UserKeywords">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${URL}</arg>
+</arguments>
+<msg timestamp="20161024 17:06:18.357" level="INFO">Opening url 'https://github.com/'</msg>
+<status status="PASS" endtime="20161024 17:06:18.593" starttime="20161024 17:06:18.356"></status>
+</kw>
+<status status="PASS" endtime="20161024 17:06:18.593" starttime="20161024 17:06:18.356"></status>
+</kw>
+<kw name="Click Sign In Button" library="UserKeywords">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>link=${SignIn}</arg>
+</arguments>
+<msg timestamp="20161024 17:06:18.594" level="INFO">Clicking element 'link=Sign in'.</msg>
+<status status="PASS" endtime="20161024 17:06:18.869" starttime="20161024 17:06:18.593"></status>
+</kw>
+<status status="PASS" endtime="20161024 17:06:18.870" starttime="20161024 17:06:18.593"></status>
+</kw>
+<kw name="Enter Valid Username" library="UserKeywords">
+<kw name="Press Key" library="Selenium2Library">
+<doc>Simulates user pressing key on element identified by `locator`.</doc>
+<arguments>
+<arg>${LoginField}</arg>
+<arg>${Usernames[0]}</arg>
+</arguments>
+<status status="PASS" endtime="20161024 17:06:18.927" starttime="20161024 17:06:18.870"></status>
+</kw>
+<status status="PASS" endtime="20161024 17:06:18.928" starttime="20161024 17:06:18.870"></status>
+</kw>
+<kw name="Enter Invalid Password" library="UserKeywords">
+<kw name="Press Key" library="Selenium2Library">
+<doc>Simulates user pressing key on element identified by `locator`.</doc>
+<arguments>
+<arg>${PasswordField}</arg>
+<arg>${Passwords[1]}</arg>
+</arguments>
+<status status="PASS" endtime="20161024 17:06:18.963" starttime="20161024 17:06:18.928"></status>
+</kw>
+<status status="PASS" endtime="20161024 17:06:18.963" starttime="20161024 17:06:18.928"></status>
+</kw>
+<kw name="Click Login Button" library="UserKeywords">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${Login}</arg>
+</arguments>
+<msg timestamp="20161024 17:06:18.964" level="INFO">Clicking element 'commit'.</msg>
+<status status="PASS" endtime="20161024 17:06:19.241" starttime="20161024 17:06:18.964"></status>
+</kw>
+<status status="PASS" endtime="20161024 17:06:19.241" starttime="20161024 17:06:18.963"></status>
+</kw>
+<kw name="Wait For Unsucessful Login Element To Appear" library="UserKeywords">
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Incorrect username or password</arg>
+</arguments>
+<status status="PASS" endtime="20161024 17:06:19.246" starttime="20161024 17:06:19.241"></status>
+</kw>
+<status status="PASS" endtime="20161024 17:06:19.246" starttime="20161024 17:06:19.241"></status>
+</kw>
+<timeout value="10 seconds"></timeout>
+<status status="PASS" endtime="20161024 17:06:19.246" critical="yes" starttime="20161024 17:06:18.356"></status>
+</test>
+<test id="s1-t5" name="User is unable to login with an invalid username and valid password">
+<kw name="Go to GitHub" library="UserKeywords">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${URL}</arg>
+</arguments>
+<msg timestamp="20161024 17:06:19.248" level="INFO">Opening url 'https://github.com/'</msg>
+<status status="PASS" endtime="20161024 17:06:19.481" starttime="20161024 17:06:19.248"></status>
+</kw>
+<status status="PASS" endtime="20161024 17:06:19.481" starttime="20161024 17:06:19.247"></status>
+</kw>
+<kw name="Click Sign In Button" library="UserKeywords">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>link=${SignIn}</arg>
+</arguments>
+<msg timestamp="20161024 17:06:19.482" level="INFO">Clicking element 'link=Sign in'.</msg>
+<status status="PASS" endtime="20161024 17:06:19.534" starttime="20161024 17:06:19.481"></status>
+</kw>
+<status status="PASS" endtime="20161024 17:06:19.535" starttime="20161024 17:06:19.481"></status>
+</kw>
+<kw name="Enter Invalid Username" library="UserKeywords">
+<kw name="Press Key" library="Selenium2Library">
+<doc>Simulates user pressing key on element identified by `locator`.</doc>
+<arguments>
+<arg>${LoginField}</arg>
+<arg>${Usernames[1]}</arg>
+</arguments>
+<status status="PASS" endtime="20161024 17:06:19.785" starttime="20161024 17:06:19.535"></status>
+</kw>
+<status status="PASS" endtime="20161024 17:06:19.785" starttime="20161024 17:06:19.535"></status>
+</kw>
+<kw name="Enter Valid Password" library="UserKeywords">
+<kw name="Press Key" library="Selenium2Library">
+<doc>Simulates user pressing key on element identified by `locator`.</doc>
+<arguments>
+<arg>${PasswordField}</arg>
+<arg>${Passwords[0]}</arg>
+</arguments>
+<status status="PASS" endtime="20161024 17:06:19.823" starttime="20161024 17:06:19.785"></status>
+</kw>
+<status status="PASS" endtime="20161024 17:06:19.823" starttime="20161024 17:06:19.785"></status>
+</kw>
+<kw name="Click Login Button" library="UserKeywords">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${Login}</arg>
+</arguments>
+<msg timestamp="20161024 17:06:19.824" level="INFO">Clicking element 'commit'.</msg>
+<status status="PASS" endtime="20161024 17:06:20.073" starttime="20161024 17:06:19.824"></status>
+</kw>
+<status status="PASS" endtime="20161024 17:06:20.073" starttime="20161024 17:06:19.824"></status>
+</kw>
+<kw name="Wait For Unsucessful Login Element To Appear" library="UserKeywords">
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Incorrect username or password</arg>
+</arguments>
+<status status="PASS" endtime="20161024 17:06:20.081" starttime="20161024 17:06:20.074"></status>
+</kw>
+<status status="PASS" endtime="20161024 17:06:20.081" starttime="20161024 17:06:20.073"></status>
+</kw>
+<timeout value="10 seconds"></timeout>
+<status status="PASS" endtime="20161024 17:06:20.081" critical="yes" starttime="20161024 17:06:19.247"></status>
+</test>
+<test id="s1-t6" name="User is unable to login with a blank username and valid password">
+<kw name="Go to GitHub" library="UserKeywords">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${URL}</arg>
+</arguments>
+<msg timestamp="20161024 17:06:20.083" level="INFO">Opening url 'https://github.com/'</msg>
+<status status="PASS" endtime="20161024 17:06:20.314" starttime="20161024 17:06:20.083"></status>
+</kw>
+<status status="PASS" endtime="20161024 17:06:20.315" starttime="20161024 17:06:20.082"></status>
+</kw>
+<kw name="Click Sign In Button" library="UserKeywords">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>link=${SignIn}</arg>
+</arguments>
+<msg timestamp="20161024 17:06:20.315" level="INFO">Clicking element 'link=Sign in'.</msg>
+<status status="PASS" endtime="20161024 17:06:20.568" starttime="20161024 17:06:20.315"></status>
+</kw>
+<status status="PASS" endtime="20161024 17:06:20.568" starttime="20161024 17:06:20.315"></status>
+</kw>
+<kw name="Enter Blank Username" library="UserKeywords">
+<kw name="Press Key" library="Selenium2Library">
+<doc>Simulates user pressing key on element identified by `locator`.</doc>
+<arguments>
+<arg>${LoginField}</arg>
+<arg>${Usernames[2]}</arg>
+</arguments>
+<status status="PASS" endtime="20161024 17:06:20.598" starttime="20161024 17:06:20.568"></status>
+</kw>
+<status status="PASS" endtime="20161024 17:06:20.598" starttime="20161024 17:06:20.568"></status>
+</kw>
+<kw name="Enter Valid Password" library="UserKeywords">
+<kw name="Press Key" library="Selenium2Library">
+<doc>Simulates user pressing key on element identified by `locator`.</doc>
+<arguments>
+<arg>${PasswordField}</arg>
+<arg>${Passwords[0]}</arg>
+</arguments>
+<status status="PASS" endtime="20161024 17:06:20.643" starttime="20161024 17:06:20.598"></status>
+</kw>
+<status status="PASS" endtime="20161024 17:06:20.643" starttime="20161024 17:06:20.598"></status>
+</kw>
+<kw name="Click Login Button" library="UserKeywords">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${Login}</arg>
+</arguments>
+<msg timestamp="20161024 17:06:20.644" level="INFO">Clicking element 'commit'.</msg>
+<status status="PASS" endtime="20161024 17:06:20.932" starttime="20161024 17:06:20.644"></status>
+</kw>
+<status status="PASS" endtime="20161024 17:06:20.932" starttime="20161024 17:06:20.644"></status>
+</kw>
+<kw name="Wait For Unsucessful Login Element To Appear" library="UserKeywords">
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Incorrect username or password</arg>
+</arguments>
+<status status="PASS" endtime="20161024 17:06:20.941" starttime="20161024 17:06:20.933"></status>
+</kw>
+<status status="PASS" endtime="20161024 17:06:20.941" starttime="20161024 17:06:20.932"></status>
+</kw>
+<timeout value="10 seconds"></timeout>
+<status status="PASS" endtime="20161024 17:06:20.941" critical="yes" starttime="20161024 17:06:20.082"></status>
+</test>
+<test id="s1-t7" name="User is unable to login with a valid username and blank password">
+<kw name="Go to GitHub" library="UserKeywords">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${URL}</arg>
+</arguments>
+<msg timestamp="20161024 17:06:20.943" level="INFO">Opening url 'https://github.com/'</msg>
+<status status="PASS" endtime="20161024 17:06:21.191" starttime="20161024 17:06:20.942"></status>
+</kw>
+<status status="PASS" endtime="20161024 17:06:21.191" starttime="20161024 17:06:20.942"></status>
+</kw>
+<kw name="Click Sign In Button" library="UserKeywords">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>link=${SignIn}</arg>
+</arguments>
+<msg timestamp="20161024 17:06:21.192" level="INFO">Clicking element 'link=Sign in'.</msg>
+<status status="PASS" endtime="20161024 17:06:21.251" starttime="20161024 17:06:21.191"></status>
+</kw>
+<status status="PASS" endtime="20161024 17:06:21.251" starttime="20161024 17:06:21.191"></status>
+</kw>
+<kw name="Enter Valid Username" library="UserKeywords">
+<kw name="Press Key" library="Selenium2Library">
+<doc>Simulates user pressing key on element identified by `locator`.</doc>
+<arguments>
+<arg>${LoginField}</arg>
+<arg>${Usernames[0]}</arg>
+</arguments>
+<status status="PASS" endtime="20161024 17:06:21.509" starttime="20161024 17:06:21.251"></status>
+</kw>
+<status status="PASS" endtime="20161024 17:06:21.509" starttime="20161024 17:06:21.251"></status>
+</kw>
+<kw name="Enter Blank Password" library="UserKeywords">
+<kw name="Press Key" library="Selenium2Library">
+<doc>Simulates user pressing key on element identified by `locator`.</doc>
+<arguments>
+<arg>${PasswordField}</arg>
+<arg>${Passwords[2]}</arg>
+</arguments>
+<status status="PASS" endtime="20161024 17:06:21.540" starttime="20161024 17:06:21.509"></status>
+</kw>
+<status status="PASS" endtime="20161024 17:06:21.540" starttime="20161024 17:06:21.509"></status>
+</kw>
+<kw name="Click Login Button" library="UserKeywords">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${Login}</arg>
+</arguments>
+<msg timestamp="20161024 17:06:21.541" level="INFO">Clicking element 'commit'.</msg>
+<status status="PASS" endtime="20161024 17:06:21.803" starttime="20161024 17:06:21.540"></status>
+</kw>
+<status status="PASS" endtime="20161024 17:06:21.803" starttime="20161024 17:06:21.540"></status>
+</kw>
+<kw name="Wait For Unsucessful Login Element To Appear" library="UserKeywords">
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Incorrect username or password</arg>
+</arguments>
+<status status="PASS" endtime="20161024 17:06:21.822" starttime="20161024 17:06:21.804"></status>
+</kw>
+<status status="PASS" endtime="20161024 17:06:21.822" starttime="20161024 17:06:21.803"></status>
+</kw>
+<timeout value="10 seconds"></timeout>
+<status status="PASS" endtime="20161024 17:06:21.822" critical="yes" starttime="20161024 17:06:20.941"></status>
+</test>
+<test id="s1-t8" name="User is unable to login with a blank username and blank password">
+<kw name="Go to GitHub" library="UserKeywords">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${URL}</arg>
+</arguments>
+<msg timestamp="20161024 17:06:21.823" level="INFO">Opening url 'https://github.com/'</msg>
+<status status="PASS" endtime="20161024 17:06:22.046" starttime="20161024 17:06:21.823"></status>
+</kw>
+<status status="PASS" endtime="20161024 17:06:22.046" starttime="20161024 17:06:21.823"></status>
+</kw>
+<kw name="Click Sign In Button" library="UserKeywords">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>link=${SignIn}</arg>
+</arguments>
+<msg timestamp="20161024 17:06:22.047" level="INFO">Clicking element 'link=Sign in'.</msg>
+<status status="PASS" endtime="20161024 17:06:22.303" starttime="20161024 17:06:22.046"></status>
+</kw>
+<status status="PASS" endtime="20161024 17:06:22.303" starttime="20161024 17:06:22.046"></status>
+</kw>
+<kw name="Enter Blank Username" library="UserKeywords">
+<kw name="Press Key" library="Selenium2Library">
+<doc>Simulates user pressing key on element identified by `locator`.</doc>
+<arguments>
+<arg>${LoginField}</arg>
+<arg>${Usernames[2]}</arg>
+</arguments>
+<status status="PASS" endtime="20161024 17:06:22.336" starttime="20161024 17:06:22.303"></status>
+</kw>
+<status status="PASS" endtime="20161024 17:06:22.336" starttime="20161024 17:06:22.303"></status>
+</kw>
+<kw name="Enter Blank Password" library="UserKeywords">
+<kw name="Press Key" library="Selenium2Library">
+<doc>Simulates user pressing key on element identified by `locator`.</doc>
+<arguments>
+<arg>${PasswordField}</arg>
+<arg>${Passwords[2]}</arg>
+</arguments>
+<status status="PASS" endtime="20161024 17:06:22.371" starttime="20161024 17:06:22.336"></status>
+</kw>
+<status status="PASS" endtime="20161024 17:06:22.371" starttime="20161024 17:06:22.336"></status>
+</kw>
+<kw name="Click Login Button" library="UserKeywords">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${Login}</arg>
+</arguments>
+<msg timestamp="20161024 17:06:22.373" level="INFO">Clicking element 'commit'.</msg>
+<status status="PASS" endtime="20161024 17:06:22.655" starttime="20161024 17:06:22.372"></status>
+</kw>
+<status status="PASS" endtime="20161024 17:06:22.655" starttime="20161024 17:06:22.371"></status>
+</kw>
+<kw name="Wait For Unsucessful Login Element To Appear" library="UserKeywords">
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Incorrect username or password</arg>
+</arguments>
+<status status="PASS" endtime="20161024 17:06:22.663" starttime="20161024 17:06:22.655"></status>
+</kw>
+<status status="PASS" endtime="20161024 17:06:22.663" starttime="20161024 17:06:22.655"></status>
+</kw>
+<timeout value="10 seconds"></timeout>
+<status status="PASS" endtime="20161024 17:06:22.663" critical="yes" starttime="20161024 17:06:21.822"></status>
+</test>
+<test id="s1-t9" name="Close All Browsers">
+<kw name="Close All Browsers" library="Selenium2Library">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" endtime="20161024 17:06:25.704" starttime="20161024 17:06:22.664"></status>
+</kw>
+<timeout value="10 seconds"></timeout>
+<status status="PASS" endtime="20161024 17:06:25.704" critical="yes" starttime="20161024 17:06:22.663"></status>
+</test>
+<status status="PASS" endtime="20161024 17:06:25.705" starttime="20161024 17:06:10.681"></status>
 </suite>
 <statistics>
 <total>
-<stat fail="0" pass="3">Critical Tests</stat>
-<stat fail="0" pass="3">All Tests</stat>
+<stat fail="0" pass="9">Critical Tests</stat>
+<stat fail="0" pass="9">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat fail="0" id="s1" name="Test" pass="3">Test</stat>
+<stat fail="0" id="s1" name="GitHub Login Test Cases" pass="9">GitHub Login Test Cases</stat>
 </suite>
 </statistics>
 <errors>
