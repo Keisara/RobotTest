@@ -14,13 +14,13 @@ Click Sign In Button
     click element   link=${SignIn}
 
 Enter Valid Username
-    press key   ${LoginField}     ${Usernames[0]}
+    press key   ${UsernameField}     ${Usernames[0]}
 
 Enter Invalid Username
-    press key   ${LoginField}     ${Usernames[1]}
+    press key   ${UsernameField}     ${Usernames[1]}
 
 Enter Blank Username
-    press key   ${LoginField}     ${Usernames[2]}
+    press key   ${UsernameField}     ${Usernames[2]}
 
 Enter Valid Password
     press key   ${PasswordField}    ${Passwords[0]}
@@ -48,6 +48,7 @@ Wait For Unsucessful Login Element To Appear
 
 Open Browser And Go To GitHub
     Open Browser    ${URL}  ${Browser}
+    maximize browser window
 
 Go to GitHub
     go to  ${URL}

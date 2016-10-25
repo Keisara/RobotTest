@@ -1,14 +1,14 @@
 *** Settings ***
+Documentation   Users should only be able to login to GitHub with both a valid username and valid password
 Library     Selenium2Library
 Resource  HomePage.robot
 Resource  LoginPage.robot
 Resource  UserKeywords.robot
-Test Timeout  10s
+Test Timeout  20s
 
 *** Test Cases ***
 User is able to login with a valid username and password
     Open Browser And Go To GitHub
-    maximize browser window
     Click Sign In Button
     Enter Valid Username
     Enter Valid Password
