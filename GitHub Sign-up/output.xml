@@ -1,0 +1,1043 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20161025 01:26:01.082" generator="Robot 3.0 (Python 2.7.9 on win32)">
+<suite source="C:\Users\Mio\PycharmProjects\Robot\GitHub Sign-up\GitHub_Sign_Up_Test_Cases.robot" id="s1" name="GitHub Sign Up Test Cases">
+<test id="s1-t1" name="Open GitHub Website And Click Sign Up Button">
+<kw name="Open Browser And Go To GitHub" library="SignInKeywords">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+</arguments>
+<msg timestamp="20161025 01:26:01.186" level="INFO">Opening browser 'chrome' to base url 'https://github.com/'</msg>
+<status status="PASS" endtime="20161025 01:26:05.626" starttime="20161025 01:26:01.185"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20161025 01:26:06.765" starttime="20161025 01:26:05.626"></status>
+</kw>
+<status status="PASS" endtime="20161025 01:26:06.765" starttime="20161025 01:26:01.185"></status>
+</kw>
+<kw name="Click Sign Up Button" library="SignInKeywords">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${SignUpButton}</arg>
+</arguments>
+<msg timestamp="20161025 01:26:06.766" level="INFO">Clicking element 'link=Sign up'.</msg>
+<status status="PASS" endtime="20161025 01:26:07.126" starttime="20161025 01:26:06.766"></status>
+</kw>
+<status status="PASS" endtime="20161025 01:26:07.126" starttime="20161025 01:26:06.765"></status>
+</kw>
+<timeout value="20 seconds"></timeout>
+<status status="PASS" endtime="20161025 01:26:07.126" critical="yes" starttime="20161025 01:26:01.184"></status>
+</test>
+<test id="s1-t2" name="User Is Unable To Sign Up With A Non-unique Username, A Non-unique Email, And A Password That Is Less Than 7 Characters">
+<kw name="Clear All TextFields" library="SignInKeywords">
+<kw name="Clear Element Text" library="Selenium2Library">
+<doc>Clears the text value of text entry element identified by `locator`.</doc>
+<arguments>
+<arg>${UsernameField}</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:07.150" starttime="20161025 01:26:07.128"></status>
+</kw>
+<kw name="Clear Element Text" library="Selenium2Library">
+<doc>Clears the text value of text entry element identified by `locator`.</doc>
+<arguments>
+<arg>${EmailField}</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:07.176" starttime="20161025 01:26:07.151"></status>
+</kw>
+<kw name="Clear Element Text" library="Selenium2Library">
+<doc>Clears the text value of text entry element identified by `locator`.</doc>
+<arguments>
+<arg>${PasswordField}</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:07.201" starttime="20161025 01:26:07.176"></status>
+</kw>
+<status status="PASS" endtime="20161025 01:26:07.201" starttime="20161025 01:26:07.127"></status>
+</kw>
+<kw name="Enter Non-unique Username" library="SignInKeywords">
+<kw name="Press Key" library="Selenium2Library">
+<doc>Simulates user pressing key on element identified by `locator`.</doc>
+<arguments>
+<arg>${UsernameField}</arg>
+<arg>${Usernames[0]}</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:07.234" starttime="20161025 01:26:07.202"></status>
+</kw>
+<status status="PASS" endtime="20161025 01:26:07.234" starttime="20161025 01:26:07.201"></status>
+</kw>
+<kw name="Enter Non-unique Email" library="SignInKeywords">
+<kw name="Press Key" library="Selenium2Library">
+<doc>Simulates user pressing key on element identified by `locator`.</doc>
+<arguments>
+<arg>${EmailField}</arg>
+<arg>${Emails[0]}</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:07.276" starttime="20161025 01:26:07.235"></status>
+</kw>
+<status status="PASS" endtime="20161025 01:26:07.276" starttime="20161025 01:26:07.235"></status>
+</kw>
+<kw name="Enter Password That Is Less Than 7 Characters" library="SignInKeywords">
+<kw name="Press Key" library="Selenium2Library">
+<doc>Simulates user pressing key on element identified by `locator`.</doc>
+<arguments>
+<arg>${PasswordField}</arg>
+<arg>${Passwords[0]}</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:07.312" starttime="20161025 01:26:07.277"></status>
+</kw>
+<status status="PASS" endtime="20161025 01:26:07.312" starttime="20161025 01:26:07.276"></status>
+</kw>
+<kw name="Click Create An Account Button" library="SignInKeywords">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${CreateAnAccountButton}</arg>
+</arguments>
+<msg timestamp="20161025 01:26:07.313" level="INFO">Clicking element 'id=signup_button'.</msg>
+<status status="PASS" endtime="20161025 01:26:07.638" starttime="20161025 01:26:07.313"></status>
+</kw>
+<status status="PASS" endtime="20161025 01:26:07.638" starttime="20161025 01:26:07.312"></status>
+</kw>
+<kw name="Wait For Unsuccessful Create An Account Element To Appear" library="SignInKeywords">
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>There were problems creating your account</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:07.652" starttime="20161025 01:26:07.639"></status>
+</kw>
+<status status="PASS" endtime="20161025 01:26:07.652" starttime="20161025 01:26:07.639"></status>
+</kw>
+<timeout value="20 seconds"></timeout>
+<status status="PASS" endtime="20161025 01:26:07.652" critical="yes" starttime="20161025 01:26:07.127"></status>
+</test>
+<test id="s1-t3" name="User Is Unable To Sign Up With A Non-unique Username, An Email That Exeeds 100 Characters, And A Password That Is Greater than 72 Characters">
+<kw name="Clear All TextFields" library="SignInKeywords">
+<kw name="Clear Element Text" library="Selenium2Library">
+<doc>Clears the text value of text entry element identified by `locator`.</doc>
+<arguments>
+<arg>${UsernameField}</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:07.674" starttime="20161025 01:26:07.653"></status>
+</kw>
+<kw name="Clear Element Text" library="Selenium2Library">
+<doc>Clears the text value of text entry element identified by `locator`.</doc>
+<arguments>
+<arg>${EmailField}</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:07.697" starttime="20161025 01:26:07.674"></status>
+</kw>
+<kw name="Clear Element Text" library="Selenium2Library">
+<doc>Clears the text value of text entry element identified by `locator`.</doc>
+<arguments>
+<arg>${PasswordField}</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:07.715" starttime="20161025 01:26:07.697"></status>
+</kw>
+<status status="PASS" endtime="20161025 01:26:07.715" starttime="20161025 01:26:07.653"></status>
+</kw>
+<kw name="Enter Non-unique Username" library="SignInKeywords">
+<kw name="Press Key" library="Selenium2Library">
+<doc>Simulates user pressing key on element identified by `locator`.</doc>
+<arguments>
+<arg>${UsernameField}</arg>
+<arg>${Usernames[0]}</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:07.748" starttime="20161025 01:26:07.716"></status>
+</kw>
+<status status="PASS" endtime="20161025 01:26:07.748" starttime="20161025 01:26:07.715"></status>
+</kw>
+<kw name="Enter Email That Exeeds 100 Characters" library="SignInKeywords">
+<kw name="Press Key" library="Selenium2Library">
+<doc>Simulates user pressing key on element identified by `locator`.</doc>
+<arguments>
+<arg>${EmailField}</arg>
+<arg>${Emails[1]}</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:07.887" starttime="20161025 01:26:07.748"></status>
+</kw>
+<status status="PASS" endtime="20161025 01:26:07.888" starttime="20161025 01:26:07.748"></status>
+</kw>
+<kw name="Enter Password That is Greater Than 72 Characters" library="SignInKeywords">
+<kw name="Press Key" library="Selenium2Library">
+<doc>Simulates user pressing key on element identified by `locator`.</doc>
+<arguments>
+<arg>${PasswordField}</arg>
+<arg>${Passwords[1]}</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:07.981" starttime="20161025 01:26:07.888"></status>
+</kw>
+<status status="PASS" endtime="20161025 01:26:07.981" starttime="20161025 01:26:07.888"></status>
+</kw>
+<kw name="Click Create An Account Button" library="SignInKeywords">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${CreateAnAccountButton}</arg>
+</arguments>
+<msg timestamp="20161025 01:26:07.982" level="INFO">Clicking element 'id=signup_button'.</msg>
+<status status="PASS" endtime="20161025 01:26:08.276" starttime="20161025 01:26:07.981"></status>
+</kw>
+<status status="PASS" endtime="20161025 01:26:08.277" starttime="20161025 01:26:07.981"></status>
+</kw>
+<kw name="Wait For Unsuccessful Create An Account Element To Appear" library="SignInKeywords">
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>There were problems creating your account</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:08.284" starttime="20161025 01:26:08.277"></status>
+</kw>
+<status status="PASS" endtime="20161025 01:26:08.284" starttime="20161025 01:26:08.277"></status>
+</kw>
+<timeout value="20 seconds"></timeout>
+<status status="PASS" endtime="20161025 01:26:08.284" critical="yes" starttime="20161025 01:26:07.652"></status>
+</test>
+<test id="s1-t4" name="User Is Unable To Sign Up With A Non-unique Username, An Email That Exeeds 100 Characters, And A Password That Contains No Lowercase Letters Or A Number">
+<kw name="Clear All TextFields" library="SignInKeywords">
+<kw name="Clear Element Text" library="Selenium2Library">
+<doc>Clears the text value of text entry element identified by `locator`.</doc>
+<arguments>
+<arg>${UsernameField}</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:08.306" starttime="20161025 01:26:08.286"></status>
+</kw>
+<kw name="Clear Element Text" library="Selenium2Library">
+<doc>Clears the text value of text entry element identified by `locator`.</doc>
+<arguments>
+<arg>${EmailField}</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:08.328" starttime="20161025 01:26:08.307"></status>
+</kw>
+<kw name="Clear Element Text" library="Selenium2Library">
+<doc>Clears the text value of text entry element identified by `locator`.</doc>
+<arguments>
+<arg>${PasswordField}</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:08.349" starttime="20161025 01:26:08.329"></status>
+</kw>
+<status status="PASS" endtime="20161025 01:26:08.349" starttime="20161025 01:26:08.286"></status>
+</kw>
+<kw name="Enter Non-unique Username" library="SignInKeywords">
+<kw name="Press Key" library="Selenium2Library">
+<doc>Simulates user pressing key on element identified by `locator`.</doc>
+<arguments>
+<arg>${UsernameField}</arg>
+<arg>${Usernames[0]}</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:08.379" starttime="20161025 01:26:08.350"></status>
+</kw>
+<status status="PASS" endtime="20161025 01:26:08.379" starttime="20161025 01:26:08.349"></status>
+</kw>
+<kw name="Enter Email That Exeeds 100 Characters" library="SignInKeywords">
+<kw name="Press Key" library="Selenium2Library">
+<doc>Simulates user pressing key on element identified by `locator`.</doc>
+<arguments>
+<arg>${EmailField}</arg>
+<arg>${Emails[1]}</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:08.492" starttime="20161025 01:26:08.379"></status>
+</kw>
+<status status="PASS" endtime="20161025 01:26:08.492" starttime="20161025 01:26:08.379"></status>
+</kw>
+<kw name="Enter Password With No Lowercase Letters And No Number" library="SignInKeywords">
+<kw name="Press Key" library="Selenium2Library">
+<doc>Simulates user pressing key on element identified by `locator`.</doc>
+<arguments>
+<arg>${PasswordField}</arg>
+<arg>${Passwords[2]}</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:08.569" starttime="20161025 01:26:08.492"></status>
+</kw>
+<status status="PASS" endtime="20161025 01:26:08.569" starttime="20161025 01:26:08.492"></status>
+</kw>
+<kw name="Click Create An Account Button" library="SignInKeywords">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${CreateAnAccountButton}</arg>
+</arguments>
+<msg timestamp="20161025 01:26:08.570" level="INFO">Clicking element 'id=signup_button'.</msg>
+<status status="PASS" endtime="20161025 01:26:08.861" starttime="20161025 01:26:08.569"></status>
+</kw>
+<status status="PASS" endtime="20161025 01:26:08.861" starttime="20161025 01:26:08.569"></status>
+</kw>
+<kw name="Wait For Unsuccessful Create An Account Element To Appear" library="SignInKeywords">
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>There were problems creating your account</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:08.870" starttime="20161025 01:26:08.861"></status>
+</kw>
+<status status="PASS" endtime="20161025 01:26:08.870" starttime="20161025 01:26:08.861"></status>
+</kw>
+<timeout value="20 seconds"></timeout>
+<status status="PASS" endtime="20161025 01:26:08.870" critical="yes" starttime="20161025 01:26:08.285"></status>
+</test>
+<test id="s1-t5" name="User Is Unable To Sign Up With A Non-unique Username, An Email That Exeeds 100 Characters, And A Blank Password">
+<kw name="Clear All TextFields" library="SignInKeywords">
+<kw name="Clear Element Text" library="Selenium2Library">
+<doc>Clears the text value of text entry element identified by `locator`.</doc>
+<arguments>
+<arg>${UsernameField}</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:08.903" starttime="20161025 01:26:08.871"></status>
+</kw>
+<kw name="Clear Element Text" library="Selenium2Library">
+<doc>Clears the text value of text entry element identified by `locator`.</doc>
+<arguments>
+<arg>${EmailField}</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:08.929" starttime="20161025 01:26:08.903"></status>
+</kw>
+<kw name="Clear Element Text" library="Selenium2Library">
+<doc>Clears the text value of text entry element identified by `locator`.</doc>
+<arguments>
+<arg>${PasswordField}</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:08.945" starttime="20161025 01:26:08.929"></status>
+</kw>
+<status status="PASS" endtime="20161025 01:26:08.945" starttime="20161025 01:26:08.871"></status>
+</kw>
+<kw name="Enter Non-unique Username" library="SignInKeywords">
+<kw name="Press Key" library="Selenium2Library">
+<doc>Simulates user pressing key on element identified by `locator`.</doc>
+<arguments>
+<arg>${UsernameField}</arg>
+<arg>${Usernames[0]}</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:08.978" starttime="20161025 01:26:08.945"></status>
+</kw>
+<status status="PASS" endtime="20161025 01:26:08.979" starttime="20161025 01:26:08.945"></status>
+</kw>
+<kw name="Enter Email That Exeeds 100 Characters" library="SignInKeywords">
+<kw name="Press Key" library="Selenium2Library">
+<doc>Simulates user pressing key on element identified by `locator`.</doc>
+<arguments>
+<arg>${EmailField}</arg>
+<arg>${Emails[1]}</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:09.087" starttime="20161025 01:26:08.979"></status>
+</kw>
+<status status="PASS" endtime="20161025 01:26:09.087" starttime="20161025 01:26:08.979"></status>
+</kw>
+<kw name="Enter Blank Password" library="SignInKeywords">
+<kw name="Press Key" library="Selenium2Library">
+<doc>Simulates user pressing key on element identified by `locator`.</doc>
+<arguments>
+<arg>${PasswordField}</arg>
+<arg>${Passwords[3]}</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:09.149" starttime="20161025 01:26:09.087"></status>
+</kw>
+<status status="PASS" endtime="20161025 01:26:09.149" starttime="20161025 01:26:09.087"></status>
+</kw>
+<kw name="Click Create An Account Button" library="SignInKeywords">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${CreateAnAccountButton}</arg>
+</arguments>
+<msg timestamp="20161025 01:26:09.150" level="INFO">Clicking element 'id=signup_button'.</msg>
+<status status="PASS" endtime="20161025 01:26:09.400" starttime="20161025 01:26:09.150"></status>
+</kw>
+<status status="PASS" endtime="20161025 01:26:09.400" starttime="20161025 01:26:09.149"></status>
+</kw>
+<kw name="Wait For Unsuccessful Create An Account Element To Appear" library="SignInKeywords">
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>There were problems creating your account</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:09.411" starttime="20161025 01:26:09.401"></status>
+</kw>
+<status status="PASS" endtime="20161025 01:26:09.411" starttime="20161025 01:26:09.401"></status>
+</kw>
+<timeout value="20 seconds"></timeout>
+<status status="PASS" endtime="20161025 01:26:09.411" critical="yes" starttime="20161025 01:26:08.870"></status>
+</test>
+<test id="s1-t6" name="User Is Unable To Sign Up With A Username That Contains Invalid Characters, A Non-unique Email, And A Password That Is Less Than 7 Characters">
+<kw name="Clear All TextFields" library="SignInKeywords">
+<kw name="Clear Element Text" library="Selenium2Library">
+<doc>Clears the text value of text entry element identified by `locator`.</doc>
+<arguments>
+<arg>${UsernameField}</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:09.435" starttime="20161025 01:26:09.413"></status>
+</kw>
+<kw name="Clear Element Text" library="Selenium2Library">
+<doc>Clears the text value of text entry element identified by `locator`.</doc>
+<arguments>
+<arg>${EmailField}</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:09.457" starttime="20161025 01:26:09.435"></status>
+</kw>
+<kw name="Clear Element Text" library="Selenium2Library">
+<doc>Clears the text value of text entry element identified by `locator`.</doc>
+<arguments>
+<arg>${PasswordField}</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:09.481" starttime="20161025 01:26:09.457"></status>
+</kw>
+<status status="PASS" endtime="20161025 01:26:09.481" starttime="20161025 01:26:09.412"></status>
+</kw>
+<kw name="Enter Username With Invalid Characters" library="SignInKeywords">
+<kw name="Press Key" library="Selenium2Library">
+<doc>Simulates user pressing key on element identified by `locator`.</doc>
+<arguments>
+<arg>${UsernameField}</arg>
+<arg>${Usernames[1]}</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:09.520" starttime="20161025 01:26:09.481"></status>
+</kw>
+<status status="PASS" endtime="20161025 01:26:09.520" starttime="20161025 01:26:09.481"></status>
+</kw>
+<kw name="Enter Non-unique Email" library="SignInKeywords">
+<kw name="Press Key" library="Selenium2Library">
+<doc>Simulates user pressing key on element identified by `locator`.</doc>
+<arguments>
+<arg>${EmailField}</arg>
+<arg>${Emails[0]}</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:09.563" starttime="20161025 01:26:09.520"></status>
+</kw>
+<status status="PASS" endtime="20161025 01:26:09.563" starttime="20161025 01:26:09.520"></status>
+</kw>
+<kw name="Enter Password That Is Less Than 7 Characters" library="SignInKeywords">
+<kw name="Press Key" library="Selenium2Library">
+<doc>Simulates user pressing key on element identified by `locator`.</doc>
+<arguments>
+<arg>${PasswordField}</arg>
+<arg>${Passwords[0]}</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:09.593" starttime="20161025 01:26:09.563"></status>
+</kw>
+<status status="PASS" endtime="20161025 01:26:09.593" starttime="20161025 01:26:09.563"></status>
+</kw>
+<kw name="Click Create An Account Button" library="SignInKeywords">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${CreateAnAccountButton}</arg>
+</arguments>
+<msg timestamp="20161025 01:26:09.594" level="INFO">Clicking element 'id=signup_button'.</msg>
+<status status="PASS" endtime="20161025 01:26:09.624" starttime="20161025 01:26:09.593"></status>
+</kw>
+<status status="PASS" endtime="20161025 01:26:09.624" starttime="20161025 01:26:09.593"></status>
+</kw>
+<kw name="Wait For Unsuccessful Create An Account Element To Appear" library="SignInKeywords">
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>There were problems creating your account</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:09.878" starttime="20161025 01:26:09.625"></status>
+</kw>
+<status status="PASS" endtime="20161025 01:26:09.878" starttime="20161025 01:26:09.624"></status>
+</kw>
+<timeout value="20 seconds"></timeout>
+<status status="PASS" endtime="20161025 01:26:09.878" critical="yes" starttime="20161025 01:26:09.412"></status>
+</test>
+<test id="s1-t7" name="User Is Unable To Sign Up With A Username That Contains Invalid Characters, A Non-unique Email, And A Password That Is Greater Than 72 Characters">
+<kw name="Clear All TextFields" library="SignInKeywords">
+<kw name="Clear Element Text" library="Selenium2Library">
+<doc>Clears the text value of text entry element identified by `locator`.</doc>
+<arguments>
+<arg>${UsernameField}</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:09.900" starttime="20161025 01:26:09.879"></status>
+</kw>
+<kw name="Clear Element Text" library="Selenium2Library">
+<doc>Clears the text value of text entry element identified by `locator`.</doc>
+<arguments>
+<arg>${EmailField}</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:09.926" starttime="20161025 01:26:09.900"></status>
+</kw>
+<kw name="Clear Element Text" library="Selenium2Library">
+<doc>Clears the text value of text entry element identified by `locator`.</doc>
+<arguments>
+<arg>${PasswordField}</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:09.943" starttime="20161025 01:26:09.926"></status>
+</kw>
+<status status="PASS" endtime="20161025 01:26:09.943" starttime="20161025 01:26:09.879"></status>
+</kw>
+<kw name="Enter Username With Invalid Characters" library="SignInKeywords">
+<kw name="Press Key" library="Selenium2Library">
+<doc>Simulates user pressing key on element identified by `locator`.</doc>
+<arguments>
+<arg>${UsernameField}</arg>
+<arg>${Usernames[1]}</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:09.973" starttime="20161025 01:26:09.944"></status>
+</kw>
+<status status="PASS" endtime="20161025 01:26:09.973" starttime="20161025 01:26:09.943"></status>
+</kw>
+<kw name="Enter Non-unique Email" library="SignInKeywords">
+<kw name="Press Key" library="Selenium2Library">
+<doc>Simulates user pressing key on element identified by `locator`.</doc>
+<arguments>
+<arg>${EmailField}</arg>
+<arg>${Emails[0]}</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:10.013" starttime="20161025 01:26:09.973"></status>
+</kw>
+<status status="PASS" endtime="20161025 01:26:10.013" starttime="20161025 01:26:09.973"></status>
+</kw>
+<kw name="Enter Password That is Greater Than 72 Characters" library="SignInKeywords">
+<kw name="Press Key" library="Selenium2Library">
+<doc>Simulates user pressing key on element identified by `locator`.</doc>
+<arguments>
+<arg>${PasswordField}</arg>
+<arg>${Passwords[1]}</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:10.106" starttime="20161025 01:26:10.013"></status>
+</kw>
+<status status="PASS" endtime="20161025 01:26:10.107" starttime="20161025 01:26:10.013"></status>
+</kw>
+<kw name="Click Create An Account Button" library="SignInKeywords">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${CreateAnAccountButton}</arg>
+</arguments>
+<msg timestamp="20161025 01:26:10.108" level="INFO">Clicking element 'id=signup_button'.</msg>
+<status status="PASS" endtime="20161025 01:26:10.375" starttime="20161025 01:26:10.107"></status>
+</kw>
+<status status="PASS" endtime="20161025 01:26:10.376" starttime="20161025 01:26:10.107"></status>
+</kw>
+<kw name="Wait For Unsuccessful Create An Account Element To Appear" library="SignInKeywords">
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>There were problems creating your account</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:10.386" starttime="20161025 01:26:10.376"></status>
+</kw>
+<status status="PASS" endtime="20161025 01:26:10.386" starttime="20161025 01:26:10.376"></status>
+</kw>
+<timeout value="20 seconds"></timeout>
+<status status="PASS" endtime="20161025 01:26:10.386" critical="yes" starttime="20161025 01:26:09.878"></status>
+</test>
+<test id="s1-t8" name="User Is Unable To Sign Up With A Username That Contains Invalid Characters, A Non-unique Email, And A Password That Contains No Lowercase Letters Or A Number">
+<kw name="Clear All TextFields" library="SignInKeywords">
+<kw name="Clear Element Text" library="Selenium2Library">
+<doc>Clears the text value of text entry element identified by `locator`.</doc>
+<arguments>
+<arg>${UsernameField}</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:10.409" starttime="20161025 01:26:10.388"></status>
+</kw>
+<kw name="Clear Element Text" library="Selenium2Library">
+<doc>Clears the text value of text entry element identified by `locator`.</doc>
+<arguments>
+<arg>${EmailField}</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:10.428" starttime="20161025 01:26:10.409"></status>
+</kw>
+<kw name="Clear Element Text" library="Selenium2Library">
+<doc>Clears the text value of text entry element identified by `locator`.</doc>
+<arguments>
+<arg>${PasswordField}</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:10.450" starttime="20161025 01:26:10.429"></status>
+</kw>
+<status status="PASS" endtime="20161025 01:26:10.450" starttime="20161025 01:26:10.388"></status>
+</kw>
+<kw name="Enter Username With Invalid Characters" library="SignInKeywords">
+<kw name="Press Key" library="Selenium2Library">
+<doc>Simulates user pressing key on element identified by `locator`.</doc>
+<arguments>
+<arg>${UsernameField}</arg>
+<arg>${Usernames[1]}</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:10.478" starttime="20161025 01:26:10.450"></status>
+</kw>
+<status status="PASS" endtime="20161025 01:26:10.479" starttime="20161025 01:26:10.450"></status>
+</kw>
+<kw name="Enter Non-unique Email" library="SignInKeywords">
+<kw name="Press Key" library="Selenium2Library">
+<doc>Simulates user pressing key on element identified by `locator`.</doc>
+<arguments>
+<arg>${EmailField}</arg>
+<arg>${Emails[0]}</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:10.520" starttime="20161025 01:26:10.479"></status>
+</kw>
+<status status="PASS" endtime="20161025 01:26:10.520" starttime="20161025 01:26:10.479"></status>
+</kw>
+<kw name="Enter Password With No Lowercase Letters And No Number" library="SignInKeywords">
+<kw name="Press Key" library="Selenium2Library">
+<doc>Simulates user pressing key on element identified by `locator`.</doc>
+<arguments>
+<arg>${PasswordField}</arg>
+<arg>${Passwords[2]}</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:10.567" starttime="20161025 01:26:10.520"></status>
+</kw>
+<status status="PASS" endtime="20161025 01:26:10.567" starttime="20161025 01:26:10.520"></status>
+</kw>
+<kw name="Click Create An Account Button" library="SignInKeywords">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${CreateAnAccountButton}</arg>
+</arguments>
+<msg timestamp="20161025 01:26:10.568" level="INFO">Clicking element 'id=signup_button'.</msg>
+<status status="PASS" endtime="20161025 01:26:10.826" starttime="20161025 01:26:10.567"></status>
+</kw>
+<status status="PASS" endtime="20161025 01:26:10.826" starttime="20161025 01:26:10.567"></status>
+</kw>
+<kw name="Wait For Unsuccessful Create An Account Element To Appear" library="SignInKeywords">
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>There were problems creating your account</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:10.839" starttime="20161025 01:26:10.826"></status>
+</kw>
+<status status="PASS" endtime="20161025 01:26:10.840" starttime="20161025 01:26:10.826"></status>
+</kw>
+<timeout value="20 seconds"></timeout>
+<status status="PASS" endtime="20161025 01:26:10.840" critical="yes" starttime="20161025 01:26:10.387"></status>
+</test>
+<test id="s1-t9" name="User Is Unable To Sign Up With A Username That Contains Invalid Characters, A Non-unique Email, And A Blank Password">
+<kw name="Clear All TextFields" library="SignInKeywords">
+<kw name="Clear Element Text" library="Selenium2Library">
+<doc>Clears the text value of text entry element identified by `locator`.</doc>
+<arguments>
+<arg>${UsernameField}</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:10.861" starttime="20161025 01:26:10.841"></status>
+</kw>
+<kw name="Clear Element Text" library="Selenium2Library">
+<doc>Clears the text value of text entry element identified by `locator`.</doc>
+<arguments>
+<arg>${EmailField}</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:10.885" starttime="20161025 01:26:10.861"></status>
+</kw>
+<kw name="Clear Element Text" library="Selenium2Library">
+<doc>Clears the text value of text entry element identified by `locator`.</doc>
+<arguments>
+<arg>${PasswordField}</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:10.903" starttime="20161025 01:26:10.885"></status>
+</kw>
+<status status="PASS" endtime="20161025 01:26:10.903" starttime="20161025 01:26:10.841"></status>
+</kw>
+<kw name="Enter Username With Invalid Characters" library="SignInKeywords">
+<kw name="Press Key" library="Selenium2Library">
+<doc>Simulates user pressing key on element identified by `locator`.</doc>
+<arguments>
+<arg>${UsernameField}</arg>
+<arg>${Usernames[1]}</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:10.932" starttime="20161025 01:26:10.903"></status>
+</kw>
+<status status="PASS" endtime="20161025 01:26:10.932" starttime="20161025 01:26:10.903"></status>
+</kw>
+<kw name="Enter Non-unique Email" library="SignInKeywords">
+<kw name="Press Key" library="Selenium2Library">
+<doc>Simulates user pressing key on element identified by `locator`.</doc>
+<arguments>
+<arg>${EmailField}</arg>
+<arg>${Emails[0]}</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:10.972" starttime="20161025 01:26:10.932"></status>
+</kw>
+<status status="PASS" endtime="20161025 01:26:10.972" starttime="20161025 01:26:10.932"></status>
+</kw>
+<kw name="Enter Blank Password" library="SignInKeywords">
+<kw name="Press Key" library="Selenium2Library">
+<doc>Simulates user pressing key on element identified by `locator`.</doc>
+<arguments>
+<arg>${PasswordField}</arg>
+<arg>${Passwords[3]}</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:10.997" starttime="20161025 01:26:10.973"></status>
+</kw>
+<status status="PASS" endtime="20161025 01:26:10.997" starttime="20161025 01:26:10.972"></status>
+</kw>
+<kw name="Click Create An Account Button" library="SignInKeywords">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${CreateAnAccountButton}</arg>
+</arguments>
+<msg timestamp="20161025 01:26:10.998" level="INFO">Clicking element 'id=signup_button'.</msg>
+<status status="PASS" endtime="20161025 01:26:11.276" starttime="20161025 01:26:10.997"></status>
+</kw>
+<status status="PASS" endtime="20161025 01:26:11.276" starttime="20161025 01:26:10.997"></status>
+</kw>
+<kw name="Wait For Unsuccessful Create An Account Element To Appear" library="SignInKeywords">
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>There were problems creating your account</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:11.285" starttime="20161025 01:26:11.277"></status>
+</kw>
+<status status="PASS" endtime="20161025 01:26:11.285" starttime="20161025 01:26:11.277"></status>
+</kw>
+<timeout value="20 seconds"></timeout>
+<status status="PASS" endtime="20161025 01:26:11.285" critical="yes" starttime="20161025 01:26:10.840"></status>
+</test>
+<test id="s1-t10" name="User Is Unable To Sign Up With A Username That Contains Invalid Characters, An Email That Exeeds 100 Characters, And A Password That Is Greater than 72 Characters">
+<kw name="Clear All TextFields" library="SignInKeywords">
+<kw name="Clear Element Text" library="Selenium2Library">
+<doc>Clears the text value of text entry element identified by `locator`.</doc>
+<arguments>
+<arg>${UsernameField}</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:11.308" starttime="20161025 01:26:11.286"></status>
+</kw>
+<kw name="Clear Element Text" library="Selenium2Library">
+<doc>Clears the text value of text entry element identified by `locator`.</doc>
+<arguments>
+<arg>${EmailField}</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:11.332" starttime="20161025 01:26:11.308"></status>
+</kw>
+<kw name="Clear Element Text" library="Selenium2Library">
+<doc>Clears the text value of text entry element identified by `locator`.</doc>
+<arguments>
+<arg>${PasswordField}</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:11.350" starttime="20161025 01:26:11.333"></status>
+</kw>
+<status status="PASS" endtime="20161025 01:26:11.350" starttime="20161025 01:26:11.286"></status>
+</kw>
+<kw name="Enter Username With Invalid Characters" library="SignInKeywords">
+<kw name="Press Key" library="Selenium2Library">
+<doc>Simulates user pressing key on element identified by `locator`.</doc>
+<arguments>
+<arg>${UsernameField}</arg>
+<arg>${Usernames[1]}</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:11.378" starttime="20161025 01:26:11.350"></status>
+</kw>
+<status status="PASS" endtime="20161025 01:26:11.378" starttime="20161025 01:26:11.350"></status>
+</kw>
+<kw name="Enter Email That Exeeds 100 Characters" library="SignInKeywords">
+<kw name="Press Key" library="Selenium2Library">
+<doc>Simulates user pressing key on element identified by `locator`.</doc>
+<arguments>
+<arg>${EmailField}</arg>
+<arg>${Emails[1]}</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:11.513" starttime="20161025 01:26:11.378"></status>
+</kw>
+<status status="PASS" endtime="20161025 01:26:11.513" starttime="20161025 01:26:11.378"></status>
+</kw>
+<kw name="Enter Password That is Greater Than 72 Characters" library="SignInKeywords">
+<kw name="Press Key" library="Selenium2Library">
+<doc>Simulates user pressing key on element identified by `locator`.</doc>
+<arguments>
+<arg>${PasswordField}</arg>
+<arg>${Passwords[1]}</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:11.623" starttime="20161025 01:26:11.514"></status>
+</kw>
+<status status="PASS" endtime="20161025 01:26:11.623" starttime="20161025 01:26:11.514"></status>
+</kw>
+<kw name="Click Create An Account Button" library="SignInKeywords">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${CreateAnAccountButton}</arg>
+</arguments>
+<msg timestamp="20161025 01:26:11.624" level="INFO">Clicking element 'id=signup_button'.</msg>
+<status status="PASS" endtime="20161025 01:26:11.923" starttime="20161025 01:26:11.624"></status>
+</kw>
+<status status="PASS" endtime="20161025 01:26:11.923" starttime="20161025 01:26:11.623"></status>
+</kw>
+<kw name="Wait For Unsuccessful Create An Account Element To Appear" library="SignInKeywords">
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>There were problems creating your account</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:11.929" starttime="20161025 01:26:11.923"></status>
+</kw>
+<status status="PASS" endtime="20161025 01:26:11.929" starttime="20161025 01:26:11.923"></status>
+</kw>
+<timeout value="20 seconds"></timeout>
+<status status="PASS" endtime="20161025 01:26:11.929" critical="yes" starttime="20161025 01:26:11.285"></status>
+</test>
+<test id="s1-t11" name="User Is Unable to Sign Up With A Username That Exceeds 39 Charcters, An Email That Does Not Contain An &quot;@&quot; Symbol Followed By A Domain, And A Password That Contains No Lowercase Letters Or A Number">
+<kw name="Clear All TextFields" library="SignInKeywords">
+<kw name="Clear Element Text" library="Selenium2Library">
+<doc>Clears the text value of text entry element identified by `locator`.</doc>
+<arguments>
+<arg>${UsernameField}</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:11.952" starttime="20161025 01:26:11.930"></status>
+</kw>
+<kw name="Clear Element Text" library="Selenium2Library">
+<doc>Clears the text value of text entry element identified by `locator`.</doc>
+<arguments>
+<arg>${EmailField}</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:11.976" starttime="20161025 01:26:11.952"></status>
+</kw>
+<kw name="Clear Element Text" library="Selenium2Library">
+<doc>Clears the text value of text entry element identified by `locator`.</doc>
+<arguments>
+<arg>${PasswordField}</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:11.995" starttime="20161025 01:26:11.976"></status>
+</kw>
+<status status="PASS" endtime="20161025 01:26:11.996" starttime="20161025 01:26:11.930"></status>
+</kw>
+<kw name="Enter Username That Exceeds 39 Characters" library="SignInKeywords">
+<kw name="Press Key" library="Selenium2Library">
+<doc>Simulates user pressing key on element identified by `locator`.</doc>
+<arguments>
+<arg>${UsernameField}</arg>
+<arg>${Usernames[2]}</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:12.073" starttime="20161025 01:26:11.996"></status>
+</kw>
+<status status="PASS" endtime="20161025 01:26:12.073" starttime="20161025 01:26:11.996"></status>
+</kw>
+<kw name="Enter Email That Does Not Contain an &quot;@&quot; Symbol" library="SignInKeywords">
+<kw name="Press Key" library="Selenium2Library">
+<doc>Simulates user pressing key on element identified by `locator`.</doc>
+<arguments>
+<arg>${EmailField}</arg>
+<arg>${Emails[2]}</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:12.116" starttime="20161025 01:26:12.073"></status>
+</kw>
+<status status="PASS" endtime="20161025 01:26:12.116" starttime="20161025 01:26:12.073"></status>
+</kw>
+<kw name="Enter Password With No Lowercase Letters And No Number" library="SignInKeywords">
+<kw name="Press Key" library="Selenium2Library">
+<doc>Simulates user pressing key on element identified by `locator`.</doc>
+<arguments>
+<arg>${PasswordField}</arg>
+<arg>${Passwords[2]}</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:12.168" starttime="20161025 01:26:12.117"></status>
+</kw>
+<status status="PASS" endtime="20161025 01:26:12.169" starttime="20161025 01:26:12.116"></status>
+</kw>
+<kw name="Click Create An Account Button" library="SignInKeywords">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${CreateAnAccountButton}</arg>
+</arguments>
+<msg timestamp="20161025 01:26:12.169" level="INFO">Clicking element 'id=signup_button'.</msg>
+<status status="PASS" endtime="20161025 01:26:12.435" starttime="20161025 01:26:12.169"></status>
+</kw>
+<status status="PASS" endtime="20161025 01:26:12.435" starttime="20161025 01:26:12.169"></status>
+</kw>
+<kw name="Wait For Unsuccessful Create An Account Element To Appear" library="SignInKeywords">
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>There were problems creating your account</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:12.441" starttime="20161025 01:26:12.435"></status>
+</kw>
+<status status="PASS" endtime="20161025 01:26:12.441" starttime="20161025 01:26:12.435"></status>
+</kw>
+<timeout value="20 seconds"></timeout>
+<status status="PASS" endtime="20161025 01:26:12.441" critical="yes" starttime="20161025 01:26:11.929"></status>
+</test>
+<test id="s1-t12" name="User Is Unable to Sign Up With A Username That Is Blank, An Email That Contains More Than 1 &quot;@&quot; Symbol, And A Password That Is Blank">
+<kw name="Clear All TextFields" library="SignInKeywords">
+<kw name="Clear Element Text" library="Selenium2Library">
+<doc>Clears the text value of text entry element identified by `locator`.</doc>
+<arguments>
+<arg>${UsernameField}</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:12.463" starttime="20161025 01:26:12.443"></status>
+</kw>
+<kw name="Clear Element Text" library="Selenium2Library">
+<doc>Clears the text value of text entry element identified by `locator`.</doc>
+<arguments>
+<arg>${EmailField}</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:12.488" starttime="20161025 01:26:12.464"></status>
+</kw>
+<kw name="Clear Element Text" library="Selenium2Library">
+<doc>Clears the text value of text entry element identified by `locator`.</doc>
+<arguments>
+<arg>${PasswordField}</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:12.505" starttime="20161025 01:26:12.488"></status>
+</kw>
+<status status="PASS" endtime="20161025 01:26:12.505" starttime="20161025 01:26:12.443"></status>
+</kw>
+<kw name="Enter Blank Username" library="SignInKeywords">
+<kw name="Press Key" library="Selenium2Library">
+<doc>Simulates user pressing key on element identified by `locator`.</doc>
+<arguments>
+<arg>${UsernameField}</arg>
+<arg>${Usernames[3]}</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:12.529" starttime="20161025 01:26:12.505"></status>
+</kw>
+<status status="PASS" endtime="20161025 01:26:12.530" starttime="20161025 01:26:12.505"></status>
+</kw>
+<kw name="Enter Email That Contains More Than 1 &quot;@&quot; Symbol" library="SignInKeywords">
+<kw name="Press Key" library="Selenium2Library">
+<doc>Simulates user pressing key on element identified by `locator`.</doc>
+<arguments>
+<arg>${EmailField}</arg>
+<arg>${Emails[3]}</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:12.568" starttime="20161025 01:26:12.530"></status>
+</kw>
+<status status="PASS" endtime="20161025 01:26:12.568" starttime="20161025 01:26:12.530"></status>
+</kw>
+<kw name="Enter Blank Password" library="SignInKeywords">
+<kw name="Press Key" library="Selenium2Library">
+<doc>Simulates user pressing key on element identified by `locator`.</doc>
+<arguments>
+<arg>${PasswordField}</arg>
+<arg>${Passwords[3]}</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:12.595" starttime="20161025 01:26:12.569"></status>
+</kw>
+<status status="PASS" endtime="20161025 01:26:12.595" starttime="20161025 01:26:12.568"></status>
+</kw>
+<kw name="Click Create An Account Button" library="SignInKeywords">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${CreateAnAccountButton}</arg>
+</arguments>
+<msg timestamp="20161025 01:26:12.596" level="INFO">Clicking element 'id=signup_button'.</msg>
+<status status="PASS" endtime="20161025 01:26:12.883" starttime="20161025 01:26:12.596"></status>
+</kw>
+<status status="PASS" endtime="20161025 01:26:12.883" starttime="20161025 01:26:12.596"></status>
+</kw>
+<kw name="Wait For Unsuccessful Create An Account Element To Appear" library="SignInKeywords">
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>There were problems creating your account</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:12.889" starttime="20161025 01:26:12.884"></status>
+</kw>
+<status status="PASS" endtime="20161025 01:26:12.889" starttime="20161025 01:26:12.883"></status>
+</kw>
+<timeout value="20 seconds"></timeout>
+<status status="PASS" endtime="20161025 01:26:12.890" critical="yes" starttime="20161025 01:26:12.442"></status>
+</test>
+<test id="s1-t13" name="User Is Unable to Sign Up With A Blank Username, A Blank Email, And A Blank Password">
+<kw name="Clear All TextFields" library="SignInKeywords">
+<kw name="Clear Element Text" library="Selenium2Library">
+<doc>Clears the text value of text entry element identified by `locator`.</doc>
+<arguments>
+<arg>${UsernameField}</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:12.907" starttime="20161025 01:26:12.891"></status>
+</kw>
+<kw name="Clear Element Text" library="Selenium2Library">
+<doc>Clears the text value of text entry element identified by `locator`.</doc>
+<arguments>
+<arg>${EmailField}</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:12.932" starttime="20161025 01:26:12.907"></status>
+</kw>
+<kw name="Clear Element Text" library="Selenium2Library">
+<doc>Clears the text value of text entry element identified by `locator`.</doc>
+<arguments>
+<arg>${PasswordField}</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:12.950" starttime="20161025 01:26:12.932"></status>
+</kw>
+<status status="PASS" endtime="20161025 01:26:12.950" starttime="20161025 01:26:12.891"></status>
+</kw>
+<kw name="Enter Blank Username" library="SignInKeywords">
+<kw name="Press Key" library="Selenium2Library">
+<doc>Simulates user pressing key on element identified by `locator`.</doc>
+<arguments>
+<arg>${UsernameField}</arg>
+<arg>${Usernames[3]}</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:12.975" starttime="20161025 01:26:12.950"></status>
+</kw>
+<status status="PASS" endtime="20161025 01:26:12.975" starttime="20161025 01:26:12.950"></status>
+</kw>
+<kw name="Enter Blank Email" library="SignInKeywords">
+<kw name="Press Key" library="Selenium2Library">
+<doc>Simulates user pressing key on element identified by `locator`.</doc>
+<arguments>
+<arg>${EmailField}</arg>
+<arg>${Emails[4]}</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:13.002" starttime="20161025 01:26:12.976"></status>
+</kw>
+<status status="PASS" endtime="20161025 01:26:13.002" starttime="20161025 01:26:12.975"></status>
+</kw>
+<kw name="Enter Blank Password" library="SignInKeywords">
+<kw name="Press Key" library="Selenium2Library">
+<doc>Simulates user pressing key on element identified by `locator`.</doc>
+<arguments>
+<arg>${PasswordField}</arg>
+<arg>${Passwords[3]}</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:13.026" starttime="20161025 01:26:13.002"></status>
+</kw>
+<status status="PASS" endtime="20161025 01:26:13.026" starttime="20161025 01:26:13.002"></status>
+</kw>
+<kw name="Click Create An Account Button" library="SignInKeywords">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${CreateAnAccountButton}</arg>
+</arguments>
+<msg timestamp="20161025 01:26:13.027" level="INFO">Clicking element 'id=signup_button'.</msg>
+<status status="PASS" endtime="20161025 01:26:13.063" starttime="20161025 01:26:13.027"></status>
+</kw>
+<status status="PASS" endtime="20161025 01:26:13.063" starttime="20161025 01:26:13.026"></status>
+</kw>
+<kw name="Wait For Unsuccessful Create An Account Element To Appear" library="SignInKeywords">
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>There were problems creating your account</arg>
+</arguments>
+<status status="PASS" endtime="20161025 01:26:13.279" starttime="20161025 01:26:13.064"></status>
+</kw>
+<status status="PASS" endtime="20161025 01:26:13.279" starttime="20161025 01:26:13.063"></status>
+</kw>
+<timeout value="20 seconds"></timeout>
+<status status="PASS" endtime="20161025 01:26:13.279" critical="yes" starttime="20161025 01:26:12.890"></status>
+</test>
+<test id="s1-t14" name="Close All Browsers">
+<kw name="Close All Browsers" library="Selenium2Library">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" endtime="20161025 01:26:16.309" starttime="20161025 01:26:13.280"></status>
+</kw>
+<timeout value="20 seconds"></timeout>
+<status status="PASS" endtime="20161025 01:26:16.309" critical="yes" starttime="20161025 01:26:13.280"></status>
+</test>
+<doc>Users should only be able to sign up a GitHub account when they meet the requirements for the text fields</doc>
+<status status="PASS" endtime="20161025 01:26:16.311" starttime="20161025 01:26:01.084"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="14">Critical Tests</stat>
+<stat fail="0" pass="14">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="GitHub Sign Up Test Cases" pass="14">GitHub Sign Up Test Cases</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
