@@ -7,8 +7,10 @@ Resource  UserKeywords.robot
 Test Timeout  20s
 
 *** Test Cases ***
-User is able to login with a valid username and password
+Open Browser And Go To GitHub
     Open Browser And Go To GitHub
+
+User is able to login with a valid username and password
     Click Sign In Button
     Enter Valid Username
     Enter Valid Password
